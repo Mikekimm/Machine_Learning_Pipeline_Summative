@@ -1,0 +1,13 @@
+fastapi
+uvicorn
+tensorflow==2.16.2
+numpy
+pillow
+python-multipart
+pydantic
+scikit-learn
+matplotlib
+seaborn
+kagglehub
+opencv-python-headless
+locust

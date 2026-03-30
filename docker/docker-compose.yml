@@ -1,0 +1,74 @@
+version: "3.9"
+
+services:
+
+  # ── API (scale with: docker-compose up --scale api=3) ──────────────────────
+  api:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    image: intel-classifier:latest
+    expose:
+      - "8000"
+    environment:
+      - MODEL_PATH=/app/models/intel_classifier_final.h5
+      - PYTHONPATH=/app/src
+    volumes:
+      - ../models:/app/models
+      - ../data:/app/data
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+    networks:
+      - ml_network
+
+  # ── Nginx load balancer ──────────────────────────────────────────────────────
+  nginx:
+    image: nginx:alpine
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+    depends_on:
+      - api
+    networks:
+      - ml_network
+    restart: unless-stopped
+
+  # ── UI Dashboard ─────────────────────────────────────────────────────────────
+  ui:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.ui
+    ports:
+      - "3000:3000"
+    environment:
+      - API_URL=http://nginx:80
+    depends_on:
+      - nginx
+    networks:
+      - ml_network
+    restart: unless-stopped
+
+  # ── Prometheus metrics ───────────────────────────────────────────────────────
+  prometheus:
+    image: prom/prometheus:latest
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml:ro
+    networks:
+      - ml_network
+    restart: unless-stopped
+
+networks:
+  ml_network:
+    driver: bridge
+
+volumes:
+  model_data:
+  training_data:

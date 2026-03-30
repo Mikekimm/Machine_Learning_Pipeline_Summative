@@ -1,0 +1,24 @@
+# Python environments
+.venv/
+.venv312/
+venv/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.pytest_cache/
+.ipynb_checkpoints/
+
+# OS/editor
+.DS_Store
+.vscode/
+
+# Logs and temp
+*.log
+*.tmp
+tmp/
+
+# Local artifacts
+locust_tests/results/*.tmp

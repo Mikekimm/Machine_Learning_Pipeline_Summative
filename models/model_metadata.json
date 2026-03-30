@@ -1,0 +1,11 @@
+{
+  "saved_at": "2026-03-30T11:09:35.771768",
+  "classes": [
+    "buildings",
+    "forest",
+    "glacier",
+    "mountain",
+    "sea",
+    "street"
+  ]
+}
