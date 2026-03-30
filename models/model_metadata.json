@@ -1,5 +1,14 @@
 {
+  "model_name": "IntelImageClassifier_MobileNetV2",
+  "version": "1.0.0",
   "saved_at": "2026-03-30T11:09:35.771768",
+  "architecture": "MobileNetV2 + Custom Head",
+  "input_size": [
+    150,
+    150,
+    3
+  ],
+  "num_classes": 6,
   "classes": [
     "buildings",
     "forest",
@@ -7,5 +16,12 @@
     "mountain",
     "sea",
     "street"
-  ]
+  ],
+  "metrics": {
+    "test_loss": 0.2518,
+    "test_accuracy": 0.9020,
+    "test_precision": 0.9152,
+    "test_recall": 0.8920,
+    "macro_auc": 0.9912
+  }
 }

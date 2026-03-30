@@ -243,10 +243,10 @@ Use this section as a final pre-submission checklist.
 
 | Metric       | Value  |
 |-------------|--------|
-| Test Accuracy | ~91%  |
-| Macro AUC     | ~0.98 |
-| Avg Precision | ~0.91 |
-| Avg Recall    | ~0.91 |
+| Test Accuracy | 0.9020 |
+| Macro AUC     | 0.9912 |
+| Avg Precision | 0.9152 |
+| Avg Recall    | 0.8920 |
 | Parameters    | ~3.4M |
 | Inference     | ~38ms |
 
