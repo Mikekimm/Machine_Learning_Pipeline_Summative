@@ -15,7 +15,7 @@ A production-ready image classification pipeline using **MobileNetV2 transfer le
 
 **YouTube Demo:** [Add your YouTube link here]
 
-**Live API URL:** [Add your deployed URL here]
+**Live API URL:** [https://machine-learning-pipeline-summative-qjmh.onrender.com](https://machine-learning-pipeline-summative-qjmh.onrender.com)
 
 ---
 
@@ -26,7 +26,7 @@ intel_image_classifier/
 ├── README.md
 ├── requirements.txt
 ├── notebook/
-│   └── intel_image_classification.ipynb   # Full ML pipeline notebook
+│   └── intel-image-classification.ipynb   # Full ML pipeline notebook
 ├── src/
 │   ├── preprocessing.py     # Data acquisition, validation, augmentation
 │   ├── model.py             # Architecture, training, retraining logic
@@ -83,7 +83,7 @@ export KAGGLE_KEY=your_api_key
 
 ```bash
 cd notebook
-jupyter notebook intel_image_classification.ipynb
+jupyter notebook intel-image-classification.ipynb
 ```
 
 Run all cells to:
@@ -235,7 +235,57 @@ Use this section as a final pre-submission checklist.
 - Locust flood simulation script present: `locust_tests/locustfile.py`
 - Local benchmark logs present: `locust_tests/results/`
 - Docker files present: `docker/Dockerfile`, `docker/docker-compose.yml`
-- Still required manually: YouTube demo link + cloud/public deployment URL
+- Still required manually: YouTube demo link + final evidence screenshots/logs listed below
+
+---
+
+## 📸 Final Evidence Pack (Screenshots + Logs)
+
+Save final proof files using the names below:
+
+- `locust_tests/results/docker_scale_summary.csv`
+- `locust_tests/results/locust_docker_1api_100u_60s.txt`
+- `locust_tests/results/locust_docker_2api_100u_60s.txt`
+- `locust_tests/results/locust_docker_3api_100u_60s.txt`
+- `evidence/prediction_response.json`
+- `evidence/retrain_trigger_response.json`
+- `evidence/retrain_status_poll_01.json` (and additional polls)
+- `evidence/screenshots/predict_correctness.png`
+- `evidence/screenshots/retrain_trigger_started.png`
+- `evidence/screenshots/retrain_status_completed.png`
+
+### One-run command sequence (copy/paste)
+
+```bash
+cd /path/to/Machine_Learning_Pipeline_Summative
+
+# 1) Docker flood test at 1, 2, 3 API containers
+USERS=100 SPAWN_RATE=10 RUN_TIME=60s HOST_URL=http://127.0.0.1 \
+  ./scripts/docker_scale_benchmark.sh
+
+# 2) Production prediction + retrain evidence
+API_URL="https://machine-learning-pipeline-summative-qjmh.onrender.com"
+IMAGE_FILE="/absolute/path/to/a/known-test-image.jpg"
+
+mkdir -p evidence/screenshots
+
+curl -sS -X POST "$API_URL/predict" \
+  -F "file=@$IMAGE_FILE" \
+  | tee evidence/prediction_response.json
+
+curl -sS -X POST "$API_URL/retrain/trigger" \
+  -H "Content-Type: application/json" \
+  -d '{"epochs": 3, "learning_rate": 0.00001, "reason": "submission_evidence"}' \
+  | tee evidence/retrain_trigger_response.json
+
+for i in 01 02 03 04 05; do
+  curl -sS "$API_URL/retrain/status" \
+    | tee "evidence/retrain_status_poll_${i}.json"
+  sleep 10
+done
+```
+
+Take the three screenshots from the dashboard or API docs and save them under `evidence/screenshots/` with the exact filenames listed above.
 
 ---
 

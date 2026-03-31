@@ -11,3 +11,4 @@ seaborn
 kagglehub
 opencv-python-headless
 locust
+streamlit>=1.32.0
