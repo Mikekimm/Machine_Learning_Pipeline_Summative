@@ -9,6 +9,7 @@ import io
 import json
 import logging
 import time
+import os
 import numpy as np
 from pathlib import Path
 from typing import Dict, List, Optional, Union
@@ -22,8 +23,9 @@ logger = logging.getLogger(__name__)
 
 CLASS_NAMES  = ['buildings', 'forest', 'glacier', 'mountain', 'sea', 'street']
 IMG_SIZE     = (150, 150)
-MODELS_DIR   = Path('../models')
-DEFAULT_MODEL = str(MODELS_DIR / 'intel_classifier_final.h5')
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
+MODELS_DIR   = PROJECT_ROOT / 'models'
+DEFAULT_MODEL = os.environ.get('MODEL_PATH', str(MODELS_DIR / 'intel_classifier_final.h5'))
 
 
 # ── Model loader (cached) ──────────────────────────────────────────────────────
