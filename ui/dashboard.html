@@ -544,7 +544,7 @@
     <!-- API URL bar (always visible) -->
     <div class="api-bar">
       <label>API_URL:</label>
-      <input type="text" id="apiUrl" value="http://127.0.0.1:8000" placeholder="http://127.0.0.1:8000">
+      <input type="text" id="apiUrl" value="https://machine-learning-pipeline-summative-qjmh.onrender.com" placeholder="https://machine-learning-pipeline-summative-qjmh.onrender.com">
       <button class="api-connect-btn" onclick="connectApi()">⚡ Connect</button>
       <span id="apiStatusBadge" class="badge badge-blue">DEMO MODE</span>
     </div>
@@ -854,8 +854,8 @@
 
 <script>
 // ── Config ──────────────────────────────────────────────────────────────────────
-let API_URL = 'http://127.0.0.1:8000';
-let demoMode = true;
+let API_URL = 'https://machine-learning-pipeline-summative-qjmh.onrender.com';
+let demoMode = false;
 let selectedClass = null;
 let uploadFiles = [];
 let uploadHistory = [];
@@ -910,7 +910,7 @@ async function connectApi() {
   } catch(e) {
     badge.textContent = 'DEMO MODE';
     badge.className = 'badge badge-blue';
-    demoMode = true;
+    demoMode = false;
     addLog('warn', `Cannot reach ${API_URL} — running in demo mode`);
   }
 }
