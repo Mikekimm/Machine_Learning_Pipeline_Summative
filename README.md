@@ -1,11 +1,3 @@
-# 🧠 Intel Scene Classifier — End-to-End ML Pipeline
-
-[![Python 3.10](https://img.shields.io/badge/Python-3.10-blue)](https://www.python.org/)
-[![TensorFlow 2.12](https://img.shields.io/badge/TensorFlow-2.12-orange)](https://tensorflow.org)
-[![FastAPI](https://img.shields.io/badge/FastAPI-0.104-green)](https://fastapi.tiangolo.com)
-[![Docker](https://img.shields.io/badge/Docker-Ready-blue)](https://www.docker.com/)
-
-A production-ready image classification pipeline using **MobileNetV2 transfer learning** on the [Intel Image Classification](https://www.kaggle.com/datasets/puneet6060/intel-image-classification) dataset (6 scene classes: buildings, forest, glacier, mountain, sea, street).
 
 ---
 
@@ -17,6 +9,7 @@ A production-ready image classification pipeline using **MobileNetV2 transfer le
 
 **Live API URL:** [https://machine-learning-pipeline-summative-qjmh.onrender.com](https://machine-learning-pipeline-summative-qjmh.onrender.com)
 
+Frontend URL: https://alu-back-end-cdy6fypjhhrxekxso3bqbp.streamlit.app/
 ---
 
 ## 📁 Project Structure
