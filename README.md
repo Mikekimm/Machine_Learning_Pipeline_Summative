@@ -3,14 +3,15 @@
 
 ## 🎥 Demo
 
-**GitHub Repo:** [Machine_Learning_Pipeline_Summative](https://github.com/Mikekimm/Machine_Learning_Pipeline_Summative.git)
+**GitHub Repo:** https://github.com/Mikekimm/Machine_Learning_Pipeline_Summative.git
 
-**YouTube Demo:** [Add your YouTube link here]
+**YouTube Demo:** https://youtu.be/c7_lskhz2q0
 
 **Live API URL:** [https://machine-learning-pipeline-summative-qjmh.onrender.com](https://machine-learning-pipeline-summative-qjmh.onrender.com)
 
-Frontend URL: https://alu-back-end-cdy6fypjhhrxekxso3bqbp.streamlit.app/
----
+Frontend URL: https: https://alu-back-end-cdy6fypjhhrxekxso3bqbp.streamlit.app
+
+Backend URL: https://machine-learning-pipeline-summative-qjmh.onrender.com
 
 ## 📁 Project Structure
 
