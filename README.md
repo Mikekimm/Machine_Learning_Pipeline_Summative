@@ -221,21 +221,6 @@ Raw logs saved under `locust_tests/results/`.
 
 ---
 
-## 📸 Final Evidence Pack (Screenshots + Logs)
-
-Save final proof files using the names below:
-
-- `locust_tests/results/docker_scale_summary.csv`
-- `locust_tests/results/locust_docker_1api_100u_60s.txt`
-- `locust_tests/results/locust_docker_2api_100u_60s.txt`
-- `locust_tests/results/locust_docker_3api_100u_60s.txt`
-- `evidence/prediction_response.json`
-- `evidence/retrain_trigger_response.json`
-- `evidence/retrain_status_poll_01.json` (and additional polls)
-- `evidence/screenshots/predict_correctness.png`
-- `evidence/screenshots/retrain_trigger_started.png`
-- `evidence/screenshots/retrain_status_completed.png`
-
 ### One-run command sequence (copy/paste)
 
 ```bash
