@@ -15,7 +15,7 @@ Backend URL: https://machine-learning-pipeline-summative-qjmh.onrender.com
 
 API (Swagger): https://machine-learning-pipeline-summative-qjmh.onrender.com/docs
 
-## 📁 Project Structure
+##  Project Structure
 
 ```
 intel_image_classifier/
@@ -48,7 +48,7 @@ intel_image_classifier/
 
 ---
 
-## 🚀 Quick Start
+## How to start it 
 
 ### 1. Clone & Install
 
@@ -105,7 +105,7 @@ Set the API URL to `http://localhost:8000` and click **Connect**.
 
 ---
 
-## 🐳 Docker Deployment
+## Docker Deployment
 
 ### Single container
 
@@ -125,7 +125,7 @@ Load balancer runs on port 80. Nginx distributes requests across all API contain
 
 ---
 
-## 📡 API Reference
+## API Reference
 
 | Method | Endpoint            | Description                        |
 |--------|---------------------|------------------------------------|
@@ -175,7 +175,7 @@ curl -X POST http://localhost:8000/retrain/trigger \
 
 ---
 
-## 🔥 Load Testing with Locust
+##  Load Testing with Locust
 
 ```bash
 # Install Locust
@@ -218,20 +218,6 @@ These are verified local runs using `locust_tests/locustfile.py` on `http://127.
 Raw logs saved under `locust_tests/results/`.
 
 ---
-
-## ✅ Submission Evidence
-
-Use this section as a final pre-submission checklist.
-
-- Notebook present with preprocessing, training, and evaluation: `notebook/intel-image-classification.ipynb`
-- Core ML pipeline scripts present: `src/preprocessing.py`, `src/model.py`, `src/prediction.py`
-- API with prediction/upload/retrain endpoints: `api/main.py`
-- UI with monitor/predict/upload/retrain panels: `ui/dashboard.html`
-- Model artifacts present: `models/intel_classifier_final.h5`, `models/intel_classifier_best.h5`, `models/model_metadata.json`
-- Locust flood simulation script present: `locust_tests/locustfile.py`
-- Local benchmark logs present: `locust_tests/results/`
-- Docker files present: `docker/Dockerfile`, `docker/docker-compose.yml`
-- Still required manually: YouTube demo link + final evidence screenshots/logs listed below
 
 ---
 
@@ -281,11 +267,9 @@ for i in 01 02 03 04 05; do
 done
 ```
 
-Take the three screenshots from the dashboard or API docs and save them under `evidence/screenshots/` with the exact filenames listed above.
-
 ---
 
-## 🧪 Model Performance
+##  Model Performance
 
 | Metric       | Value  |
 |-------------|--------|
@@ -302,7 +286,7 @@ Take the three screenshots from the dashboard or API docs and save them under `e
 
 ---
 
-## 🔄 Retraining Pipeline
+##  Retraining Pipeline
 
 1. **Upload new images** via the dashboard or `/upload` endpoint
 2. **Trigger retraining** via the Retrain panel or `/retrain/trigger`
@@ -314,7 +298,7 @@ Take the three screenshots from the dashboard or API docs and save them under `e
 
 ---
 
-## 📊 Dashboard Features
+##  Dashboard Features
 
 - **Monitor**: Live uptime, RPS, latency, error rate, request log
 - **Predict**: Drag-and-drop single image prediction with confidence bars
@@ -350,7 +334,7 @@ docker push $ECR_URI/intel-classifier:latest
 
 ---
 
-## 🧑‍💻 Development
+##  Development
 
 ```bash
 # Run tests
@@ -365,6 +349,4 @@ black src/ api/
 
 ---
 
-## 📝 License
 
-MIT © 2024
