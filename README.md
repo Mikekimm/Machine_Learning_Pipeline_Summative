@@ -13,6 +13,8 @@ Frontend URL: https: https://alu-back-end-cdy6fypjhhrxekxso3bqbp.streamlit.app
 
 Backend URL: https://machine-learning-pipeline-summative-qjmh.onrender.com
 
+API (Swagger): https://machine-learning-pipeline-summative-qjmh.onrender.com/docs
+
 ## 📁 Project Structure
 
 ```
